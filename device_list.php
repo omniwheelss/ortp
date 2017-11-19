@@ -5,13 +5,13 @@
 			<div class="box-header">
 				<h3 class="box-title">Vehicle Last Known Location</h3>
 				<div class="box-tools">
-					<div class="input-group">
+					<!--<div class="input-group">
 						<input type="text" name="table_search" class="form-control input-sm pull-right" style="width: 150px;" placeholder="Search"/>
 						<div class="input-group-btn">
 							<button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
 						</div>
 					</div>
-				</div>
+				</div>-->
 			</div><!-- /.box-header -->
 			<div class="box-body table-responsive no-padding">
 				<table class="table table-hover">
@@ -52,7 +52,7 @@
 							<td><span><?=$Device_Status_Array['ign']?></span></td>
 							<td><?=$Speed?></td>
 							<td><?=$Device_Status_Array['location']?></td>
-							<td><a href="current_location.php?id=<?=$IMEI_Encrypt?>"><img src="./img/plot.jpg" width="15" height="15"></a></td>
+							<td><a href="current_location.php?id=<?=$IMEI_Encrypt?>"><img src="./img/plot.png" width="15" height="15" title="Show Current Location on Map"></a></td>
 						</tr>
 						<?php
 							$i++;
