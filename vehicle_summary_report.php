@@ -99,7 +99,7 @@
 										if(count($Device_List_Array) > 0){										
 											$i = 1;
 											$device_count2 = 0;
-											echo $Mysql_Query2 = "select * from device_data where imei = '".$IMEI."' and device_date_stamp between '".$From_Date."' and '".$To_Date."' order by device_date_stamp asc";
+											$Mysql_Query2 = "select * from device_data where imei = '".$IMEI."' and device_date_stamp between '".$From_Date."' and '".$To_Date."' order by device_date_stamp asc";
 											$Mysql_Query_Result2 = mysql_query($Mysql_Query2) or die(mysql_error());
 											$device_count2 = mysql_num_rows($Mysql_Query_Result2);
 											if($device_count2>=1){
