@@ -28,7 +28,7 @@
 												}
 											?>
 										</select> 
-										<label style="float:left; margin-left:20px; ">Date Range: <span style="color:#FF0000"> * </span>
+										<label style="float:left; margin-left:20px; ">Date: <span style="color:#FF0000"> * </span>
 										<div id="vehicle_report_reservation_errorloc" style="color:#FF0000" class="error"></div>
 										</label>     
 										<div class="input-group" style="width:40%; float:left; margin-left:10px; ">       

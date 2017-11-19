@@ -48,7 +48,7 @@
 							}
 						?>						
 						<div class="form-group">
-							<label for="exampleInputEmail1">Please enter your old Password</label>
+							<label for="exampleInputEmail1">Please enter the current Password</label>
 							<input type="password" class="form-control" id="Old_Pass" name="Old_Pass" placeholder="Enter your old Password">
 						</div>
 						<div class="form-group">
