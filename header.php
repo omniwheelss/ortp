@@ -271,7 +271,7 @@
                             <ul class="dropdown-menu">
                                 <!-- User image -->
                                 <li class="user-header bg-light-blue">
-                                    <img src="img/avatar3.png" class="img-circle" alt="User Image" />
+                                    <img src="img/avatar5.png" class="img-circle" alt="User Image" />
                                     <p>
                                         <?=ucfirst($Cook_Variable[0])?> 
                                         <small>Member since <?=date("M. Y")?></small>
@@ -312,7 +312,7 @@
                     <!-- Sidebar user panel -->
                     <div class="user-panel">
                         <div class="pull-left image">
-                            <img src="img/avatar3.png" class="img-circle" alt="User Image" />
+                            <img src="img/avatar5.png" class="img-circle" alt="User Image" />
                         </div>
                         <div class="pull-left info">
                             <p>Hello, <?=ucfirst($Cook_Variable[0])?></p>
@@ -345,8 +345,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="movement_history_map.php"><i class="fa fa-angle-double-right"></i> Movement History</a></li>
-
+                                <li><a href="movement_history_map.php"><i class="fa fa-map-marker"></i> Movement History</a></li>
                                 <!--<li><a href="pages/UI/icons.html"><i class="fa fa-angle-double-right"></i> Icons</a></li>
                                 <li><a href="pages/UI/buttons.html"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
                                 <li><a href="pages/UI/sliders.html"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
@@ -360,9 +359,9 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="vehicle_summary.php"><i class="fa fa-angle-double-right"></i> Vehicle Summary</a></li>
-								<li><a href="poi_summary.php"><i class="fa fa-angle-double-right"></i> POI Summary</a></li>
-                                <li><a href="daily_summary.php"><i class="fa fa-angle-double-right"></i> Daily Summary</a></li>
+                                <li><a href="vehicle_summary.php"><i class="fa fa-th-list"></i> Vehicle Summary</a></li>
+								<li><a href="poi_summary.php"><i class="fa fa-th-list"></i> POI Summary</a></li>
+                                <li><a href="daily_summary.php"><i class="fa fa-th-list"></i> Daily Summary</a></li>
                                 <!--<li><a href="movement_summary.php"><i class="fa fa-angle-double-right"></i> Movement Summary</a></li>
                                 <li><a href="idle_summary.php"><i class="fa fa-angle-double-right"></i> Idle Time Summary</a></li>
                                 <li><a href="stopped_summary.php"><i class="fa fa-angle-double-right"></i> Stopped Summary</a></li>-->
@@ -375,7 +374,7 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="change_password.php"><i class="fa fa-angle-double-right"></i> Change Password</a></li>
+                                <li><a href="change_password.php"><i class="fa fa-cogs"></i> Change Password</a></li>
                             </ul>
                         </li>
 						

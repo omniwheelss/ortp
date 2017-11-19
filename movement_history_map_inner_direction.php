@@ -9,7 +9,9 @@
                                 <div class="box-header">
                                     <!--<h3 class="box-title">Vehicle Summary Report</h3>-->
                                 </div><!-- /.box-header -->								
-									 <div class="form-group">										<label style="float:left; margin-left:10px;">Select Vehicle <span style="color:#FF0000"> * </span><div id="vehicle_report_imei_errorloc" style="color:#FF0000" class="error"></div></label>
+									 <div class="form-group">
+									 <label style="float:left; margin-left:10px;">Select Vehicle <span style="color:#FF0000"> * </span>
+									 <div id="vehicle_report_imei_errorloc" style="color:#FF0000" class="error"></div></label>
 										<select class="form-control" style="width:200px; margin-left:10px; float:left;" name="imei" id="imei">
 											<option value='0'>--Select Vehicle--</option>
 											<?php
@@ -26,7 +28,7 @@
 												}
 											?>
 										</select> 
-										<label style="float:left; margin-left:20px; ">Date and time range: <span style="color:#FF0000"> * </span>
+										<label style="float:left; margin-left:20px; ">Date & Time: <span style="color:#FF0000"> * </span>
 										<div id="vehicle_report_reservationtime_errorloc" style="color:#FF0000" class="error"></div>
 										</label>     
 										<div class="input-group" style="width:40%; float:left; margin-left:10px; ">       
