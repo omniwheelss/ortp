@@ -11,8 +11,8 @@
                         <small></small>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home -> </a></li> 
-						<i></i> Maps -></a></li>
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home > </a></li> 
+						<i></i> Maps ></a></li>
                         <li class="active">Movement Summary Map</li>
                     </ol>
                 </section>

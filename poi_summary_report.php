@@ -97,7 +97,26 @@
 								
 								
 								?>
+									<?php
+									//Getting Device List
+									if(isset($_REQUEST['imei']))
+										$IMEI = $_REQUEST['imei'];
+										$Geofence_List = Geofence_List($IMEI, $From_Date, $To_Date);
+									?>	
 								
+									<?php
+									if(count($Geofence_List) > 0){
+									?>										
+									<table style="height:20px;">
+										<tr>
+											<td width="10px;">&nbsp;</td>
+											<td style="background-color:#FDF6BF; width:20px; height:10px;">&nbsp;</td>
+											<td>&nbsp;&nbsp;Vehicle Travelled in Unassigned Route</td>
+										</tr>
+									</table>
+										<?php
+										}
+										?>										
                                 <div class="box-body table-responsive">
                                     <table id="" class="table table-bordered table-striped">
                                         <thead>
@@ -109,16 +128,11 @@
                                                 <th>Trip End At</th>
                                                 <th>End Date Time</th>
 												<th>Total Travel Time</th>
-												<th>Route</th>
+												<th>Plot</th>
 											</tr>
                                         </thead>
                                         <tbody>
-									<?php
-									//Getting Device List
-									if(isset($_REQUEST['imei']))
-										$IMEI = $_REQUEST['imei'];
-										$Geofence_List = Geofence_List($IMEI, $From_Date, $To_Date);
-
+										<?php
 										$Device_List_Array = Device_List($User_Account_ID);
 										$Device_Info_Array = Device_Info($IMEI);
 
@@ -146,7 +160,7 @@
 												$Get_EpochDiff = Get_EpochDiff(strtotime($Out_Date_Stamp), strtotime($In_Date_Stamp));
 												$Total_Pocket_Time = Epoch_To_Time($Get_EpochDiff);
 												if($Out_Geofence_Details['name'] == $In_Geofence_Details['name'])
-													$Wrong_Rec_Cls = 'style="background-color:#FFC200"';
+													$Wrong_Rec_Cls = 'style="background-color:#FDF6BF"';
 												else	
 													$Wrong_Rec_Cls = '';
 												
@@ -160,7 +174,7 @@
 												<td <?=$Wrong_Rec_Cls?>><?=$In_Geofence_Details['name']?></td>
 												<td <?=$Wrong_Rec_Cls?>><?=$In_Date_Stamp_Final?></td>
 												<td <?=$Wrong_Rec_Cls?>><?=$Total_Pocket_Time?></td>
-												<td>
+												<td <?=$Wrong_Rec_Cls?>>
 												<?php
 												$Records_Exist = 1;
 												if(!empty($In_Geofence_Details['name'])){
@@ -207,7 +221,7 @@
 									?>										
 									<table style="height:20px;">
 										<tr>
-											<td style="background-color:#FFC200; width:20px; height:10px;">&nbsp;</td>
+											<td style="background-color:#FDF6BF; width:20px; height:10px;">&nbsp;</td>
 											<td>&nbsp;&nbsp;Vehicle Travelled in Unassigned Route</td>
 										</tr>
 									</table>
