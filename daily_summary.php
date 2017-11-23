@@ -11,8 +11,8 @@
                         <small></small>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Home -> </a></li> 
-						<i></i> Reports -></a></li>
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Home > </a></li> 
+						<i></i> Reports ></a></li>
                         <li class="active">Daily Summary</li>
                     </ol>
                 </section>

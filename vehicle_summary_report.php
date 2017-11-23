@@ -147,7 +147,7 @@
 												<td><?=$i?></td>
 												<td><?=date("d-M-Y g:ia",strtotime($device_date_stamp))?></td>
 												<td><?=$Device_Info_Array[$IMEI]['vehicle_no']?></td>
-												<td><?=$Vehicle_Summary_Array['location']?></td>
+												<td width="50%"><?=$Vehicle_Summary_Array['location']?></td>
 												<td><?=$Status_Icon?><?=$Vehicle_Summary_Array['status']?></td>
 												<td align="center"><?=$Vehicle_Summary_Array['ign']?></td>
 												<td><?=$Speed?></td>
