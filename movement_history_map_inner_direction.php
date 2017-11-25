@@ -50,6 +50,20 @@
 										<input type="submit" name="submit" id="submit" class="btn btn-primary btn-sm" style="float:left; margin-left:10px; margin-top:2px;" value="Search" />
 										
 									</div><br />
+
+								
+								<!--Validation starts-->
+								<script type="text/javascript" src="js/validator.js"></script>
+								<script language="JavaScript" type="text/javascript" xml:space="preserve">
+								//<![CDATA[
+								//You should create the validator only after the definition of the HTML form
+								var frmvalidator  = new Validator('vehicle_report');
+								frmvalidator.EnableOnPageErrorDisplay();        
+								frmvalidator.addValidation("imei","dontselect=0","Please Select Vehicle");
+								frmvalidator.addValidation("reservationtime","req","Field Should not be left Empty");
+								</script>
+								<!--Validation Ends-->									
+									
 								<?php				
 								if(isset($_REQUEST['reservationtime'])){
 									$Date_Search_Exp = explode("-",$_REQUEST['reservationtime']);	
@@ -57,8 +71,7 @@
 									$To_Date = date("Y-m-d H:i:s",strtotime($Date_Search_Exp[1]));		
 								//$Date_Search = date()			
 								?>
-								
-								<!--Validation starts-->
+
 								
                                 <div class="box-body table-responsive">
 										<?php
@@ -161,6 +174,8 @@
 									});
 									latlngbounds.extend(marker.position);
 									(function (marker, data) {
+										infoWindow.setContent(data.description);
+										infoWindow.open(map, marker);
 										google.maps.event.addListener(marker, "click", function (e) {
 											infoWindow.setContent(data.description);
 											infoWindow.open(map, marker);
