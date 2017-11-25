@@ -77,8 +77,7 @@
 								var frmvalidator  = new Validator('vehicle_report');
 								frmvalidator.EnableOnPageErrorDisplay();        
 								frmvalidator.addValidation("imei","dontselect=0","Please Select Vehicle");
-								frmvalidator.addValidation("reservation1","dontselect=0","Please Select Date");
-								//frmvalidator.addValidation("reservation","req","Field Should not be left Empty");
+								frmvalidator.addValidation("reservation","req","Field Should not be left Empty");
 								</script>
 								<!--Validation Ends-->
 									
