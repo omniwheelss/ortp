@@ -99,7 +99,7 @@
 											  position: position,
 											  map: map
 											});
-
+											marker.setIcon('./img/map_icons/bus3.png');
 											marker.setTitle((<?=$i?> + 1).toString());
 											attachSecretMessage(marker, <?=$i?>);
 										<?php
