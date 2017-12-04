@@ -8,7 +8,6 @@
 #######################################################
 
 
-	//$Administration_Home="http://110.234.152.165/Fasttrack";
 	$Administration_Home="http://localhost/biz/FAdmin";
 	$Cook_Name = "VTSCook";
 	$Title = "CODEBASE - Administration";
@@ -19,7 +18,8 @@
 	$Img_Big_Prefix = "big_";
 	$Img_Thumb_Prefix = "thumb_";
 	$Logo_Name = "logo.jpg";
-    $homepagezoomlevel = 10;		$currentlocationzoomlvl=15;	
+    $homepagezoomlevel = 10;
+	$currentlocationzoomlvl=18;	
 
 ######################################################
 #

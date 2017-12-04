@@ -360,7 +360,13 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="vehicle_summary.php"><i class="fa fa-th-list"></i> Vehicle Summary</a></li>
+								<?php
+								if($User_Account_ID != 4){
+								?>
 								<li><a href="poi_summary.php"><i class="fa fa-th-list"></i> POI Summary</a></li>
+								<?php
+								}
+								?>
                                 <li><a href="daily_summary.php"><i class="fa fa-th-list"></i> Daily Summary</a></li>
                                 <!--<li><a href="movement_summary.php"><i class="fa fa-angle-double-right"></i> Movement Summary</a></li>
                                 <li><a href="idle_summary.php"><i class="fa fa-angle-double-right"></i> Idle Time Summary</a></li>
@@ -383,8 +389,7 @@
                 <!-- /.sidebar -->
             </aside>
 			<?php
-				$user_account_id = $Cook_Variable[3];
-				$Mysql_Query1 = "select * from device_master where user_account_id = '".$user_account_id."'";
+				$Mysql_Query1 = "select * from device_master where user_account_id = '".$User_Account_ID."'";
 				$Mysql_Query_Result1 = mysql_query($Mysql_Query1) or die(mysql_error());
 				$device_count1 = mysql_num_rows($Mysql_Query_Result1);
 				if($device_count1>=1){
