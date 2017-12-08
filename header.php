@@ -368,6 +368,7 @@
 								}
 								?>
                                 <li><a href="daily_summary.php"><i class="fa fa-th-list"></i> Daily Summary</a></li>
+								<li><a href="daily_summary_new.php"><i class="fa fa-th-list"></i> Daily Summary New</a></li>
                                 <!--<li><a href="movement_summary.php"><i class="fa fa-angle-double-right"></i> Movement Summary</a></li>
                                 <li><a href="idle_summary.php"><i class="fa fa-angle-double-right"></i> Idle Time Summary</a></li>
                                 <li><a href="stopped_summary.php"><i class="fa fa-angle-double-right"></i> Stopped Summary</a></li>-->

@@ -1935,6 +1935,10 @@ Component: timeline
   background-color: #fcf2f2;
   border-color: #dFb5b4;
 }
+.callout.callout-green {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
 .callout.callout-warning {
   background-color: #fefbed;
   border-color: #f1e7bc;
