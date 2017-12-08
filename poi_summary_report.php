@@ -23,7 +23,7 @@
 												
 												foreach($device_list1 as $device_list_val){
 											?>
-												<option value="<?=$device_list_val['imei']?>" <?=($_REQUEST['imei'] == $device_list_val['imei']?'selected=selected' : '')?>><?=$device_list_val['vehicle_no']?></option>
+												<option value="<?=$device_list_val['imei']?>" <?=($_REQUEST['imei'] == $device_list_val['imei']?'selected=selected' : '')?>><?=$device_list_val['vehicle_no']."---".$device_list_val['imei']?></option>
 											<?php
 												}
 											?>
