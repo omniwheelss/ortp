@@ -7,13 +7,13 @@
                 <!-- Content Header (Page header) -->
                 <section class="content-header">
                     <h1>
-                        Daily Summary <?php if(isset($_REQUEST['imei'])) echo "- ".$vehicle_nos[$_REQUEST['imei']]?>
+                        Daily Summary Detail <?php if(isset($_REQUEST['imei'])) echo "- ".$vehicle_nos[$_REQUEST['imei']]?>
                         <small></small>
                     </h1>
                     <ol class="breadcrumb">
                         <li><a href="#"><i class="fa fa-dashboard"></i> Home > </a></li> 
 						<i></i> Reports ></a></li>
-                        <li class="active">Daily Summary</li>
+                        <li class="active">Daily Summary Detail</li>
                     </ol>
                 </section>
 

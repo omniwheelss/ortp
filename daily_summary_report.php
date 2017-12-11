@@ -75,7 +75,7 @@
                                             <tr>
                                                 <th>SNo</th>
                                                 <th>Date Time</th>
-                                                <th>Total Up Time</th>
+                                                <!--<th>Total Up Time</th>-->
                                                 <th>Moving Time</th>
                                                 <th>Stopped Time</th>
                                                 <th>Idle Time</th>
@@ -101,7 +101,7 @@
 												<tr>
 													<td><?=$i?></h3></td>
 													<td><?=date("d-M-Y",strtotime($Date))?></td>
-													<td><?=$Get_Summary[1]?></td>
+													<!--<td><?=$Get_Summary[1]?></td>-->
 													<td><?=$Get_Summary[3]?></td>
 													<td><?=$Get_Summary[4]?></td>
 													<td><?=$Get_Summary[5]?></td>

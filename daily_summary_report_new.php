@@ -97,6 +97,10 @@
 											foreach($Date_Array as $Date){
 												// Getting all the data by status
 												$Get_Summary = Get_Daily_Summary($Date, $IMEI);		
+												$Query_Date = date("m/d/Y",strtotime($Date));;
+												$Query_Date = $Query_Date." - ".$Query_Date;
+												$Fuel_Msg = null;
+												$KM_Msg = null;
 												
 												if(count($Get_Summary[1]) > 0){
 													if(!empty($Get_Summary[3])){
@@ -106,8 +110,34 @@
 													else{
 														$CalloutCls = "danger";	
 														$HRCls = "#dFb5b4";	
+													}
+													
+													if($IMEI == '864547036439193'){
+														$Fuel_Avg = 3.90;
+													}
+													else if($IMEI == '864547034419338'){
+														$Fuel_Avg = 3.75;
+													}
+													else if($IMEI == '864547034266879'){
+														$Fuel_Avg = 4.50;
+													}
+													// Fuel Calculation		
+													
+													if($Get_Summary[7] > 0){
+														$Total_KM_Travelled = number_format($Get_Summary[7], 2);
+														$Fuel_Travelled_Avg = number_format(($Get_Summary[7] / $Fuel_Avg), 2);
+													}	
+													else{
+														$Total_KM_Travelled = $Get_Summary[7];
+														$Fuel_Travelled_Avg = $Get_Summary[7] / $Fuel_Avg;
 													}	
 													
+													if($Fuel_Travelled_Avg < 0)
+														$Fuel_Msg = "<span class='text-red'> - Some Issues with Route</span>";
+														
+													if($Total_KM_Travelled < 0)
+														$KM_Msg = "<span class='text-red'> - Some Issues with Route</span>";
+
 											?>
 												<!--<tr>
 													<td><?=$i?></h3></td>
@@ -129,10 +159,11 @@
 													<h3><b>Date :</b> <?=date("d-M-Y",strtotime($Date))?>  | <b>Vehicle</b> : <?=$vehicle_nos[$IMEI]?></b></h3>
 													<hr style='border-color:<?=$HRCls?>' />
 													<p><b>Total Travelled Time : <?=$Get_Summary[3]?></b></p>
-													<p><b>Total Travelled KM : <?=$Get_Summary[7]?> KM</b> </p>
+													<p><b>Total Travelled KM : <?=$Total_KM_Travelled?> KM</b> <?=$KM_Msg?></p>
+													<p><b>Approx Fuel Usage : <?=$Fuel_Travelled_Avg?> Ltr</b> <?=$Fuel_Msg?></p>
 													<p><b>Total Stopped Time : <?=$Get_Summary[4]?></b> </p>
 													<p><b>Total Idle Time : <?=$Get_Summary[5]?></b> </p>
-													<p class="text-grey"><b>Trip Summary Link : <u><a href="poi_summary.php?imei=<?=$IMEI?>&reservation=<?=$_REQUEST['reservation']?>&submit=Search">POI Summary</a></u></b> </p>
+													<p class="text-grey"><b>Trip Summary : <u><a href="poi_summary.php?imei=<?=$IMEI?>&reservation=<?=$Query_Date?>&submit=Search">Trip Summary</a></u></b> </p>
 												</div>								
 											<?php
 													$Records_Exist = 1;
