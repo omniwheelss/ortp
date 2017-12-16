@@ -193,13 +193,17 @@
 								$j = 0;
 								foreach($device_status_array as $device_status_val[$j]){		
 									$device_status_final_array = $device_status_val[$j];
+									$Device_Date_Stamp = date("d-M-Y g:ia",strtotime($device_status_final_array['device_date_stamp']));
 									
-									$message[] = "<div><table cellpadding=\"5\" cellspacing=\"5\" border=\"0\"><tr><td align=\"left\" valign=\"top\" colspan=\"2\" style=\"color:red;\"><b>Current Location Info</b></td></tr><tr><td align=\"left\" valign=\"top\" width=\"90px\"><b>Vehicle</b></td><td>".$vehicle_nos[$device_status_final_array['imei']]."</td></tr><tr><td align=\"left\" valign=\"top\" width=\"90px\"><b>Date & Time</b></td><td align=\"left\" valign=\"top\">". date("d-M-Y g:ia",strtotime($device_status_final_array['device_date_stamp']))."</td></tr><tr><td align=\"left\" valign=\"top\"><b>Location</b></td><td align=\"left\" valign=\"top\">".$device_status_final_array['location']."</td></tr></table></div>";
+									$message[] = "<div><table cellpadding=\"5\" cellspacing=\"5\" border=\"0\"><tr><td align=\"left\" valign=\"top\" colspan=\"2\" style=\"color:red;\"><b>Current Location Info</b></td></tr><tr><td align=\"left\" valign=\"top\" width=\"90px\"><b>Vehicle</b></td><td>".$vehicle_nos[$device_status_final_array['imei']]."</td></tr><tr><td align=\"left\" valign=\"top\" width=\"90px\"><b>Date & Time</b></td><td align=\"left\" valign=\"top\">".$Device_Date_Stamp."</td></tr><tr><td align=\"left\" valign=\"top\"><b>Location</b></td><td align=\"left\" valign=\"top\">".$device_status_final_array['location']."</td></tr></table></div>";
+									$latitude = $device_status_final_array['latitude'];
+									$longitude = $device_status_final_array['longitude'];
 									
+									if($Previous_latitude != $latitude && $Previous_longitude != $longitude) {
 							?>	
 							var position = new google.maps.LatLng(
-								<?=$device_status_final_array['latitude']?>,
-								<?=$device_status_final_array['longitude']?>);
+								<?=$latitude?>,
+								<?=$longitude?>);
 							var marker = new google.maps.Marker({
 							  position: position,
 							  //set.marker("img/map_icons/c.png"),
@@ -217,9 +221,9 @@
 							?>
 							//marker.setIcon('http://maps.google.com/mapfiles/ms/icons/red-dot.png');
 							marker.setIcon('./img/map_icons/red.gif');
-							marker.addOverlay(createMarker(point, icon,"<? echo $message; ?>"));
-							var label = new ELabel(new GLatLng(<?=$device_status_final_array['latitude']?>, <?=$device_status_final_array['longitude']?>), "End", "historyend",new GSize(0,0));
-							marker.addOverlay(label);
+							/*marker.addOverlay(createMarker(point, icon,"<? echo $message; ?>"));
+							var label = new ELabel(new GLatLng(<?=$latitude?>, <?=$longitude?>), "End", "historyend",new GSize(0,0));
+							marker.addOverlay(label);*/
 							<?php
 							}
 							else{
@@ -234,11 +238,13 @@
 							attachSecretMessage(marker, <?=$j?>);
 							
 						<?php
+									}
 								$j++;
+								$Previous_latitude = $latitude;
+								$Previous_longitude = $longitude;
 								}
 								if(count($message) > 0)
 									$messages = "'".join("','",$message)."'";
-
 							}
 						?>
 
