@@ -368,7 +368,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <!--<li><a href="movement_history_map.php"><i class="fa fa-map-marker"></i> Movement History</a></li>-->
-								<li><a href="movement_history_map_v1.php"><i class="fa fa-map-marker"></i> Movement History V1</a></li>
+								<li><a href="movement_history_map_v1.php"><i class="fa fa-map-marker"></i> Movement History</a></li>
                                 <!--<li><a href="pages/UI/icons.html"><i class="fa fa-angle-double-right"></i> Icons</a></li>
                                 <li><a href="pages/UI/buttons.html"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
                                 <li><a href="pages/UI/sliders.html"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
