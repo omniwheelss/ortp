@@ -37,12 +37,11 @@
 		</script>
     </head>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=en"></script>
-	<script src="./js/jscript.js"></script>
 
     </head>
     <!--<body class="skin-blue" onLoad="load()" onUnload="GUnload()">-->
 	<?php
-		if (basename($_SERVER['SCRIPT_FILENAME']) == 'movement_history_map.php'){
+		if ((basename($_SERVER['SCRIPT_FILENAME']) == 'movement_history_map.php') || (basename($_SERVER['SCRIPT_FILENAME']) == 'movement_history_map_v1.php')){
 	?>		
 		<body class="skin-blue" onLoad="initialize()" onUnload="GUnload()">
 	<?php
@@ -368,7 +367,8 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="movement_history_map.php"><i class="fa fa-map-marker"></i> Movement History</a></li>
+                                <!--<li><a href="movement_history_map.php"><i class="fa fa-map-marker"></i> Movement History</a></li>-->
+								<li><a href="movement_history_map_v1.php"><i class="fa fa-map-marker"></i> Movement History V1</a></li>
                                 <!--<li><a href="pages/UI/icons.html"><i class="fa fa-angle-double-right"></i> Icons</a></li>
                                 <li><a href="pages/UI/buttons.html"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
                                 <li><a href="pages/UI/sliders.html"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
