@@ -41,7 +41,7 @@
 										}		
 										else{	
 											$reservation = date("m/d/Y")." - ". date("m/d/Y");	
-										}						
+										}
 										?>     
 										<input type="text" class="form-control pull-right" id="reservation" name="reservation" value="<?=$reservation?>" />
 										<!--
@@ -90,11 +90,7 @@
 									$From_Date = $From_Date." 00:00:00";
 									$To_Date = $To_Date." 23:59:59";
 									
-									//$Date_Array = Date_Range($From_Date, $To_Date);
-								
-								echo "<br />";
-								
-								
+									echo "<br />";								
 								?>
 									<?php
 									//Getting Device List
@@ -228,8 +224,12 @@
 										}
 										?>										
 									
-									<?php							}							?>
-                                </div><!-- /.box-body -->                            </div><!-- /.box -->
+									<?php
+									}
+									?>
+                                </div><!-- /.box-body -->
+								</div><!-- /.box -->
                         </div>
-                    </div>				</form>
+                    </div>
+					</form>
 							

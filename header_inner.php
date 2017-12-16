@@ -37,12 +37,11 @@
 		</script>
     </head>
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=en"></script>
-	<script src="./js/jscript.js"></script>
 
     </head>
     <!--<body class="skin-blue" onLoad="load()" onUnload="GUnload()">-->
 	<?php
-		if (basename($_SERVER['SCRIPT_FILENAME']) == 'movement_history_map.php'){
+		if ((basename($_SERVER['SCRIPT_FILENAME']) == 'movement_history_map.php') || (basename($_SERVER['SCRIPT_FILENAME']) == 'movement_history_map_v1.php')){
 	?>		
 		<body class="skin-blue" onLoad="initialize()" onUnload="GUnload()">
 	<?php
@@ -276,6 +275,15 @@
                                 </li> */ ?>
                             </ul>
                         </li>
+						<?php
+							$Mysql_Query11 = "select * from user_master where user_account_id = '".$User_Account_ID."'";
+							$Mysql_Query_Result11 = mysql_query($Mysql_Query11) or die(mysql_error());
+							$device_count11 = mysql_num_rows($Mysql_Query_Result11);
+							if($device_count11>=1){
+								while($um_list = mysql_fetch_array($Mysql_Query_Result11)){
+									$Member_Since = $um_list['date_stamp'];
+								}
+							}						?>										
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -288,7 +296,7 @@
                                     <img src="img/avatar5.png" class="img-circle" alt="User Image" />
                                     <p>
                                         <?=ucfirst($Cook_Variable[0])?> 
-                                        <small>Member since <?=date("M. Y")?></small>
+                                        <small>Member since <?=date("M. Y", strtotime($Member_Since))?></small>
                                     </p>
                                 </li>
                                 <!-- Menu Body -->
@@ -359,7 +367,8 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="movement_history_map.php"><i class="fa fa-map-marker"></i> Movement History</a></li>
+                                <!--<li><a href="movement_history_map.php"><i class="fa fa-map-marker"></i> Movement History</a></li>-->
+								<li><a href="movement_history_map_v1.php"><i class="fa fa-map-marker"></i> Movement History</a></li>
                                 <!--<li><a href="pages/UI/icons.html"><i class="fa fa-angle-double-right"></i> Icons</a></li>
                                 <li><a href="pages/UI/buttons.html"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
                                 <li><a href="pages/UI/sliders.html"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
@@ -382,6 +391,7 @@
 								}
 								?>
                                 <li><a href="daily_summary.php"><i class="fa fa-th-list"></i> Daily Summary</a></li>
+								<li><a href="daily_summary_new.php"><i class="fa fa-th-list"></i> Daily Summary Detail</a></li>
                                 <!--<li><a href="movement_summary.php"><i class="fa fa-angle-double-right"></i> Movement Summary</a></li>
                                <li><a href="idle_summary.php"><i class="fa fa-angle-double-right"></i> Idle Time Summary</a></li>
                                 <li><a href="stopped_summary.php"><i class="fa fa-angle-double-right"></i> Stopped Summary</a></li>-->
