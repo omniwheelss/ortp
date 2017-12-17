@@ -131,7 +131,7 @@
 														($Vehicle_Summary_Array['live_data'] == 1 && $Vehicle_Summary_Array['speed'] <= 10 && $Vehicle_Summary_Array['ign'] == 1) || $Alert_Msg_Code[0] == 'VI'){
 														$Vehicle_Summary_Array['status'] = "Idle";
 														$Vehicle_Summary_Array['ign'] = "On";
-														//$Vehicle_Summary_Array['speed'] = 0;
+														$Vehicle_Summary_Array['speed'] = 0;
 														$Vehicle_Summary_Array['status_icon'] = "orange.png";
 													}
 													
