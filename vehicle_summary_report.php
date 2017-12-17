@@ -115,20 +115,20 @@
 													$Alert_Msg_Code = explode("|", $Vehicle_Summary_Array['alert_msg_code']);
 													
 													// Moving Status
-													if($Vehicle_Summary_Array['gps_move_status'] == 1 && $Vehicle_Summary_Array['speed'] > 1.5 && $Vehicle_Summary_Array['ign'] == 1){
+													if($Vehicle_Summary_Array['live_data'] == 1 && $Vehicle_Summary_Array['speed'] > 10 && $Vehicle_Summary_Array['ign'] == 1){
 														$Vehicle_Summary_Array['status'] = "Moving";
 														$Vehicle_Summary_Array['ign'] = "On";
 														$Vehicle_Summary_Array['status_icon'] = "green.png";
 													}
 													// Stopped Status
-													else if($Vehicle_Summary_Array['gps_move_status'] == 0 && $Vehicle_Summary_Array['speed'] == 0  && $Vehicle_Summary_Array['ign'] == 0){
+													else if($Vehicle_Summary_Array['live_data'] == 1 && $Vehicle_Summary_Array['speed'] == 0  && $Vehicle_Summary_Array['ign'] == 0 && $Alert_Msg_Code[0] != 'VI'){
 														$Vehicle_Summary_Array['status'] = "Stopped";
 														$Vehicle_Summary_Array['ign'] = "Off";
 														$Vehicle_Summary_Array['status_icon'] = "red.png";
 													}
 													// Idle Status
-													else if((
-														(($Vehicle_Summary_Array['gps_move_status'] == 2 && $Vehicle_Summary_Array['ign'] == 1)  || ($Vehicle_Summary_Array['gps_move_status'] == 1 && $Vehicle_Summary_Array['speed'] == 0 && $Vehicle_Summary_Array['ign'] == 1)) ) || $Alert_Msg_Code[0] == 'VI'){
+													else if(
+														($Vehicle_Summary_Array['live_data'] == 1 && $Vehicle_Summary_Array['speed'] <= 10 && $Vehicle_Summary_Array['ign'] == 1) || $Alert_Msg_Code[0] == 'VI'){
 														$Vehicle_Summary_Array['status'] = "Idle";
 														$Vehicle_Summary_Array['ign'] = "On";
 														//$Vehicle_Summary_Array['speed'] = 0;
