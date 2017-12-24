@@ -111,7 +111,7 @@
 													## Vechicle Status
 													$device_date_stamp = $Vehicle_Summary_Array['device_date_stamp'];
 													
-													$Device_Epoch_Diff = Epoch_Diff(device_date_stamp);
+													$Device_Epoch_Diff = Epoch_Diff($device_date_stamp);
 													$Alert_Msg_Code = explode("|", $Vehicle_Summary_Array['alert_msg_code']);
 													
 													// Moving Status
