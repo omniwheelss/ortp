@@ -174,7 +174,7 @@
 												$Records_Exist = 1;
 												if(!empty($In_Geofence_Details['name'])){
 												?>
-												<a href="movement_history_map.php?imei=<?=$IMEI?>&reservationtime=<?=$Route_Map_Time?>&submit=Search"><img src="./img/plot.png" width="15" height="15"></a>
+												<a href="movement_history_map_v1.php?imei=<?=$IMEI?>&reservationtime=<?=$Route_Map_Time?>&submit=Search"><img src="./img/plot.png" width="15" height="15"></a>
 												<?php
 												}
 												?>
