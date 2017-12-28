@@ -96,7 +96,7 @@
 												// Getting all the data by status
 												$Get_Summary = Get_Daily_Summary($Date, $IMEI);		
 												
-												if(count($Get_Summary[1]) > 0){
+												if(count($Get_Summary[1]) >= 0){
 											?>
 												<tr>
 													<td><?=$i?></h3></td>
@@ -115,6 +115,7 @@
 												</tr>
 											<?php
 													$Records_Exist = 1;
+													$i++;
 												}
 												else{
 											?>
@@ -125,7 +126,6 @@
 												</tr>-->
 											<?php	
 												}
-												$i++;
 											}
 											
 										}
