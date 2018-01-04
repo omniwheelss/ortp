@@ -169,6 +169,9 @@
 												$Trip_Distance = number_format($Trip_Distance, 2);
 												
 												$Route_Map_Time = date("m/d/Y g:i A", strtotime($Out_Date_Stamp_Final))." - ". date("m/d/Y g:i A", strtotime($In_Date_Stamp_Final));
+												
+												// Dont show unassigned route
+												if($Trip_Distance > 5){
 											?>
 											<tr>
 												<td <?=$Wrong_Rec_Cls?>><?=$i?></td>
@@ -179,6 +182,7 @@
 												<td <?=$Wrong_Rec_Cls?>><?=$In_Date_Stamp_Final?></td>
 												<td <?=$Wrong_Rec_Cls?>><?=$Total_Pocket_Time?></td>
 												<td <?=$Wrong_Rec_Cls?>><?=$Total_Pocket_Time?></td>
+												<td <?=$Wrong_Rec_Cls?>><?=$Trip_Distance?></td>
 												<td <?=$Wrong_Rec_Cls?>>
 												<?php
 												$Records_Exist = 1;
@@ -191,6 +195,7 @@
 												</td>
 											</tr>
 											<?php
+												}
 												}
 												$i++;
 											}
