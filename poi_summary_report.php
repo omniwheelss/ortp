@@ -124,7 +124,6 @@
                                                 <th>End Date Time</th>
                                                 <th>Total KM Travelled</th>						
 												<th>Total Travel Time</th>
-												<th>Total KM</th>
 												<th>Plot</th>
 											</tr>
                                         </thead>
@@ -165,13 +164,17 @@
 												if($Out_Geofence_Details['name'] != $In_Geofence_Details['name']){
 													//$Wrong_Rec_Cls = 'style="background-color:#FDF6BF"';
 												
-												$Trip_Distance = distance($In_Latitude,$In_Longitude,$Out_Latitude,$Out_Longitude);
-												$Trip_Distance = number_format($Trip_Distance, 2);
+												$Trip_Distance_Actual = distance($In_Latitude,$In_Longitude,$Out_Latitude,$Out_Longitude);
+												$Trip_Distance = number_format($Trip_Distance_Actual, 2);
+												// Added for when trip is not ended
+												if($Trip_Distance_Actual > 1000){
+													$Trip_Distance = null;
+												}	
 												
 												$Route_Map_Time = date("m/d/Y g:i A", strtotime($Out_Date_Stamp_Final))." - ". date("m/d/Y g:i A", strtotime($In_Date_Stamp_Final));
 												
 												// Dont show unassigned route
-												if($Trip_Distance > 5){
+												if($Trip_Distance_Actual > 5 ){
 											?>
 											<tr>
 												<td <?=$Wrong_Rec_Cls?>><?=$i?></td>
@@ -180,9 +183,8 @@
 												<td <?=$Wrong_Rec_Cls?>><?=$Out_Date_Stamp_Final?></td>
 												<td <?=$Wrong_Rec_Cls?>><?=$In_Geofence_Details['name']?></td>
 												<td <?=$Wrong_Rec_Cls?>><?=$In_Date_Stamp_Final?></td>
-												<td <?=$Wrong_Rec_Cls?>><?=$Total_Pocket_Time?></td>
-												<td <?=$Wrong_Rec_Cls?>><?=$Total_Pocket_Time?></td>
 												<td <?=$Wrong_Rec_Cls?>><?=$Trip_Distance?></td>
+												<td <?=$Wrong_Rec_Cls?>><?=$Total_Pocket_Time?></td>
 												<td <?=$Wrong_Rec_Cls?>>
 												<?php
 												$Records_Exist = 1;
@@ -195,9 +197,9 @@
 												</td>
 											</tr>
 											<?php
+													$i++;
 												}
 												}
-												$i++;
 											}
 										}
 										else{
@@ -208,7 +210,7 @@
 										if($Records_Exist == 0){
 										?>										
 												<tr>
-													<td colspan="8" style='color:red;'>Records not found</td>
+													<td colspan="9" style='color:red;'>Records not found</td>
 												</tr>												
 										<?php
 										}
