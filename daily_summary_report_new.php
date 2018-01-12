@@ -121,6 +121,10 @@
 													else if($IMEI == '864547034266879'){
 														$Fuel_Avg = 4.50;
 													}
+													else if($IMEI == '861359030521544'){
+														$Fuel_Avg = 12.50;
+													}
+													
 													// Fuel Calculation		
 													
 													if($Get_Summary[7] > 0){
