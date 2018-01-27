@@ -367,8 +367,8 @@
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                <!--<li><a href="movement_history_map.php"><i class="fa fa-map-marker"></i> Movement History</a></li>-->
-								<li><a href="movement_history_map_v1.php"><i class="fa fa-map-marker"></i> Movement History</a></li>
+                                <li><a href="movement_history_map.php"><i class="fa fa-map-marker"></i> Movement History</a></li>
+								<li><a href="movement_history_map_v1.php"><i class="fa fa-map-marker"></i> Movement History V1</a></li>
                                 <!--<li><a href="pages/UI/icons.html"><i class="fa fa-angle-double-right"></i> Icons</a></li>
                                 <li><a href="pages/UI/buttons.html"><i class="fa fa-angle-double-right"></i> Buttons</a></li>
                                 <li><a href="pages/UI/sliders.html"><i class="fa fa-angle-double-right"></i> Sliders</a></li>
@@ -383,6 +383,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="vehicle_summary.php"><i class="fa fa-th-list"></i> Vehicle Summary</a></li>
+								<li><a href="vehicle_summary_v1.php"><i class="fa fa-th-list"></i> Vehicle Summary V1</a></li>
 								<?php
 								if($User_Account_ID != 4){
 								?>
@@ -413,7 +414,10 @@
             </aside>
 
 			<?php
-				$Mysql_Query1 = "select * from device_master where user_account_id = '".$User_Account_ID."'";
+				if($User_Account_ID == 1)
+					$Mysql_Query1 = "select * from device_master";
+				else
+					$Mysql_Query1 = "select * from device_master where user_account_id = '".$User_Account_ID."'";			
 				$Mysql_Query_Result1 = mysql_query($Mysql_Query1) or die(mysql_error());
 				$device_count1 = mysql_num_rows($Mysql_Query_Result1);
 				if($device_count1>=1){
